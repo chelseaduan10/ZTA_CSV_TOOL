@@ -14,7 +14,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
+'''
 NICKNAME_MAP = {
     "abby": "abigail",
     "ally": "allison",
@@ -23,10 +23,10 @@ NICKNAME_MAP = {
     "gabby": "gabrielle",
     "jess": "jessica",
     "maggie": "marguerite",
-    "nikka": "nikki",
+    "nikka": "dominique",
     "sophie": "sofia",
 }
-
+'''
 
 def clean_basic_name(name):
     if pd.isna(name):
@@ -79,9 +79,9 @@ def build_match_key(name):
     parts = name.split()
 
     # replace common nicknames
-    parts = [NICKNAME_MAP.get(part, part) for part in parts]
+    #parts = [NICKNAME_MAP.get(part, part) for part in parts]
 
-    return " ".join(parts)
+    #return " ".join(parts)
 
 
 @app.route('/process', methods=['POST'])
